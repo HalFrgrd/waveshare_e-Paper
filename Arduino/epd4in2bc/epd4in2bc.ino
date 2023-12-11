@@ -34,16 +34,20 @@
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
+  Serial.begin(115200);
   Epd epd;
+  Serial.println("asdasd");
 
   if (epd.Init() != 0) {
     Serial.print("e-Paper init failed");
     return;
+  } else{
+    Serial.println("initialised ");
   }
 
   /* This clears the SRAM of the e-paper display */
   epd.ClearFrame();
+  Serial.println("cleared frame");
 
   /**
     * Due to RAM not enough in Arduino UNO, a frame buffer is not allowed.
@@ -61,6 +65,7 @@ void setup() {
   paint.Clear(COLORED);
   paint.DrawStringAt(100, 2, "Hello world", &Font24, UNCOLORED);
   epd.SetPartialWindowRed(paint.GetImage(), 0, 64, paint.GetWidth(), paint.GetHeight());
+  Serial.println("here");
   
   paint.SetWidth(64);
   paint.SetHeight(64);

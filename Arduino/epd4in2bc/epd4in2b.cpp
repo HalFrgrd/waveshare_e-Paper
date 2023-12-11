@@ -78,9 +78,9 @@ void Epd::SendData(unsigned char data) {
  *  @brief: Wait until the busy_pin goes HIGH
  */
 void Epd::WaitUntilIdle(void) {
-    while(DigitalRead(busy_pin) == 0) {      //0: busy, 1: idle
+    // while(DigitalRead(busy_pin) == 0) {      //0: busy, 1: idle
         DelayMs(100);
-    }      
+    // }      
 }
 
 /**
@@ -89,10 +89,10 @@ void Epd::WaitUntilIdle(void) {
  *          see Epd::Sleep();
  */
 void Epd::Reset(void) {
-    DigitalWrite(reset_pin, LOW);
-    DelayMs(200);
-    DigitalWrite(reset_pin, HIGH);
-    DelayMs(200);   
+    // DigitalWrite(reset_pin, LOW);
+    // DelayMs(200);
+    // DigitalWrite(reset_pin, HIGH);
+    // DelayMs(200);   
 }
 
 /**

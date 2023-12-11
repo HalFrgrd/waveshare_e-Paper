@@ -40,6 +40,8 @@ void setup() {
   if (epd.Init() != 0) {
     Serial.print("e-Paper init failed");
     return;
+  } else{
+    Serial.print("e-Paper init succeeded");
   }
 
   /* This clears the SRAM of the e-paper display */
